@@ -132,7 +132,6 @@ body {
 
 .navigation-list {
   display: flex;
-  flex-wrap: wrap;
   max-width: 600px;
   margin: 0;
   padding: 0;
@@ -157,6 +156,7 @@ body {
   text-decoration: none;
   padding: 20px 16px;
   top: 1px;
+  white-space: nowrap;
 }
 
 .navigation-link:hover {
@@ -340,7 +340,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 0 75px;
-  height: 385px;
+  min-height: 385px;
   box-sizing: border-box;
   margin-top: 2px;
 }
@@ -452,13 +452,16 @@ body {
 .recommend-item {
   margin: 0;
   padding: 0 75px;
-  width: 400px;
   min-height: 385px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding-top: 185px;
+  padding-bottom: 40px;
   background-repeat: no-repeat;
-  background-position: center 45px;
+  background-position: center 80px;
   background-size: 75px 72px;
 }
 
@@ -494,10 +497,10 @@ body {
 
 .recommend-item-list {
   font-size: 24px;
-  line-height: 116px;
+  line-height: 28px;
   text-align: center;
   text-transform: uppercase;
-  margin: 140px 0 -13px
+  margin: 0 0 30px 0;
 }
 
 .recommend-list-list {
@@ -515,7 +518,6 @@ body {
   padding-top: 96px;
   padding-bottom: 96px;
   position: relative;
-
 }
 
 .interested-title {
@@ -593,7 +595,7 @@ body {
   line-height: 36px;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 0;
+  margin-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -1060,13 +1062,10 @@ body {
 /* --- СОРТИРОВКА И ВИД --- */
 .sorting-container {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   margin-top: 55px;
   margin-bottom: 21px;
-  padding: 0 1px 1px;
-  position: relative;
-  top: 4px;
+  padding: 0;
 }
 
 .catalog-search {
@@ -1077,6 +1076,7 @@ body {
   text-transform: uppercase;
   margin-top: -2px;
   margin-right: auto;
+  white-space: nowrap;
 }
 
 .select-control {
@@ -1095,14 +1095,16 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url(../images/icon/down-arrow.svg);
+  background-image: url("../images/icon/down-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 20px center;
   background-size: 12px 12px;
   cursor: pointer;
+  flex-shrink: 0;
   position: relative;
-  left: -18px;
-  margin-top: -28px;
+  top: -11px;
+  margin-right: 70px;
+  margin-left: 0;
 }
 
 .select-control:hover {
@@ -1124,7 +1126,9 @@ body {
   border-radius: 4px;
   border: 2px solid #e5e5e5;
   box-sizing: border-box;
-  margin-top: -29px;
+  flex-shrink: 0;
+  position: relative;
+  top: -10px;
 }
 
 .card-grid-toggle:hover {
@@ -1154,6 +1158,7 @@ body {
   margin-top: 0;
   position: relative;
   left: -1px;
+  top: 3px;
 }
 
 .product-card {
@@ -1312,6 +1317,9 @@ body {
   background-color: #f2f2f2;
   border-radius: 4px;
   grid-column: 2 / 3;
+  height: 36px;
+  align-self: end;
+  box-sizing: border-box;
 }
 
 /* --- ПАГИНАЦИЯ --- */
@@ -1409,6 +1417,7 @@ body {
   width: 180px;
   margin-left: -39px;
   margin-top: 29px;
+  position: relative;
 }
 
 .footer-social-item {
@@ -1873,24 +1882,8 @@ body {
 }
 
 .find-button:active {
-  background-color: #68a -2ca;
-  color: rgba(3255, 255, 255px, 0.3);
-}
-
-.sorting-container .card-grid-toggle:nth-child(3) {
-  position: relative;
-  top: 1px;
-  margin-left: 2px;
-}
-
-.sorting-container .card-grid-toggle:nth-child(4) {
-  position: relative;
-  left: 2px;
-}
-
-.sorting-container .card-grid-toggle:nth-child(5) {
-  position: relative;
-  left: 5px;
+  background-color: #68a2ca;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .product-list li:nth-child(4) {
@@ -1914,8 +1907,7 @@ body {
   top: -1px;
 }
 
-label[for="check-in-date"],
-label[for="check-out-date"] {
+.modal-date-label {
   position: relative;
   left: 2px;
 }
